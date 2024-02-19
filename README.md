@@ -10,13 +10,13 @@ Follow these steps to get Organisation-CRM up and running:
 1. Clone the repository:
 
 ```bash
-cd https://github.com/Alexandranuthu/Organisation-crm.git
+cd https://github.com/Alexandranuthu/Apex-crm.git
 ```
 
 2. Navigate into the project directory:
 
 ```bash
-cd Organisation-crm
+cd Apex-crm
 ```
 
 3. Install the PHP dependencies:
