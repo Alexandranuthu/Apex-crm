@@ -67,5 +67,5 @@
         </table>
     </div>
     <!--create a link to the create contact page -->
-    <a href="{{ route('Contacts.create') }}" class="btn btn-primary">Add Contact</a>
+    <a href="{{ route('contacts.create') }}" class="btn btn-primary">Add Contact</a>
 @endsection
