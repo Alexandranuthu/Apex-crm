@@ -56,7 +56,7 @@
                                 {{ $deals->amount }}
                             </td>
                             <td class="px-6 py-4 border-b border-gray-300 dark:border-gray-600">
-                                {{ $deals->status }}
+                                {{ $deals->status_label }}
                             </td>
                             <td class="px-6 py-4 border-b border-gray-300 dark:border-gray-600">
                                 {{ $deals->start_date }}
