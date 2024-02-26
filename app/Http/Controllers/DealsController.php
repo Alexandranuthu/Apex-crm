@@ -35,7 +35,7 @@ class DealsController extends Controller
             'description' => 'required|string',
             'owner' => 'required|string',
             'amount' => 'required|numeric',
-            'status' => 'required|string',
+            'status' => 'required|integer',
             'start_date' => 'required|date',
             'close_date' => 'required|date',
         ]);
@@ -84,19 +84,19 @@ class DealsController extends Controller
         $deal = Deals::find($id);
 
         if (!$deal) {
-            return redirect()->route('deals.index')->with('error', 'Deal not found');
+            return redirect()->route('Deals.index')->with('error', 'Deal not found');
         }
         $request->validate([
             'name' => 'string',
             'description' => 'string',
             'owner' => 'string',
             'amount' => 'numeric',
-            'status' => 'string',
+            'status' => 'integer',
             'start_date' => 'date',
             'close_date' => 'date',
         ]);
         $deal->update($request->all());
-        return redirect()->route('deals.index')->with('success', 'Deal updated successfully');
+        return redirect()->route('Deals.index')->with('success', 'Deal updated successfully');
     }
 
     /**
@@ -108,10 +108,10 @@ class DealsController extends Controller
         $deal = Deals::find($id);
 
         if (!$deal) {
-            return redirect()->route('deals.index')->with('error', 'Deal not found');
+            return redirect()->route('Deals.index')->with('error', 'Deal not found');
         }
 
         $deal->delete();
-        redirect()->route('deals.index')->with('success', 'Deal deleted successfully');
+        redirect()->route('Deals.index')->with('success', 'Deal deleted successfully');
     }
 }

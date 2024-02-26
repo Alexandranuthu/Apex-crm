@@ -22,7 +22,7 @@ class DealsSeeder extends Seeder
                 'description' => $faker->paragraph,
                 'owner' => $faker->name,
                 'amount' => $faker->randomNumber(5),
-                'status' => $faker->randomElement(['pending', 'completed', 'cancelled']),
+                'status' => $faker->randomNumber(1,5),
                 'start_date' => $faker->dateTimeBetween('-1 year', 'now')->format('Y-m-d'),
                 'close_date' => $faker->dateTimeBetween('now', '+1 year')->format('Y-m-d'),
                 'created_at' => now(),

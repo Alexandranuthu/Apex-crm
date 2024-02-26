@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('owner');
             $table->decimal('amount', 10, 2);
-            $table->string('status');
+            $table->integer('status');
             $table->date('start_date');
             $table->date('close_date');
             $table->timestamps();

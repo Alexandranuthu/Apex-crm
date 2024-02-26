@@ -44,13 +44,20 @@
 
         <div class="margin-bottom: 20px;">
             <label for="status" style="display: block; margin-bottom: 5px;">Status</label>
-            <input type="text" name="status" id="status" class="form-control" style="width: 100%;">
+            <select name="status" id="status" class="form-control" style="width: 100%;">
+                <option value="{{ \App\Models\Deals::PROSPECTING }}">Prospecting</option>
+                <option value="{{ \App\Models\Deals::QUALIFICATION }}">Qualification</option>
+                <option value="{{ \App\Models\Deals::NEGOTIATION }}">Negotiation</option>
+                <option value="{{ \App\Models\Deals::CLOSED_WON }}">Closed-won</option>
+                <option value="{{ \App\Models\Deals::CLOSED_LOST }}">Closed-lost</option>
+            </select>
             <span style="color: red; font-size: 12px;">
                 @error('status')
                     {{ $message }}
                 @enderror
             </span>
         </div>
+
 
         <div class="margin-bottom: 20px;">
             <label for="start_date" style="display: block; margin-bottom: 5px;">Start Date</label>

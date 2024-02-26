@@ -21,7 +21,8 @@ class DealsFactory extends Factory
           'description'=>$this->faker->paragraph,
           'owner'=>$this->faker->name,
           'amount'=>$this->faker->randomFloat(2, 100, 10000),
-          'status'=>$this->faker->randomElement(['Prospecting', 'Qualification', 'Negotiation', 'Closed-Won', 'Closed-Lost']),
+          // Generates a random integer between 1 and 5 (inclusive) for status
+          'status' => $this->faker->numberBetween(1, 5),
           'start_date'=>$this->faker->dateTimeBetween('-1 year', 'now'),
           'close_date'=>$this->faker->dateTimeBetween('now', '+1 year'),
         ];
