@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Organisation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,18 +9,18 @@ use Illuminate\Database\Eloquent\Model;
 class Contacts extends Model
 {
     use HasFactory;
-
+    // Adding fillable property
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'firstname',
+        'lastname',
         'email',
         'phone',
         'job_title',
-        'organization_id',
+        'organisation_id',
         'image'
     ];
-    //Add relationships
-    public function organization()
+    //adding relationships
+    public function organisation()
     {
         return $this->belongsTo(Organisation::class);
     }
