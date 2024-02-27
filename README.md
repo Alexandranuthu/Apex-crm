@@ -112,4 +112,4 @@ Filament provides a full installation guide in its documentation. You can find i
 ![alt text](image-17.png)
 
 Also the model views, e.g index.blade.php e.t.c is not needed  in this project as we are using API only approach. I kept mine though for ease of review for myself.It might be helpful for my own reference or future development efforts.
-In the above screenshots I have created a simple CRUD application using Filament and added some customizations as per my own requirements. 
+In the above screenshots I have created a simple CRUD application using Filament and added some customizations as per my own preference. 
