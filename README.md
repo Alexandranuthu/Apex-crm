@@ -51,7 +51,7 @@ php artisan serve
 
 You should now be able to access the application at `http://localhost:8000`.
 
-![alt text](image.png)
+<!-- ![alt text](image.png)
 
 ![alt text](image-1.png)
 
@@ -74,4 +74,39 @@ You should now be able to access the application at `http://localhost:8000`.
 ## DEALS OUTPUT
 ![alt text](image-11.png)
 
-![alt text](image-12.png)
+![alt text](image-12.png) -->
+
+## FILAMENT UI OUTPUT
+Filament is a fully-featured PHP admin panel framework that provides tools for managing your application's data and settings. With Filament, you can easily create customizable admin panels for your PHP applications, allowing you to manage users, permissions, settings, and more, all through a user-friendly interface.
+
+## INSTALLATION
+To install Filament, you will need to follow these steps
+1. Ensure to uninstall other starter kits before installing  Filament. You can do this by running  the following command in your terminal:
+ ```bash
+composer remove <package-name>
+```
+2. Require Filament via Composer: Add Filament to your project's dependencies by running the following Composer command:
+
+```bash
+composer require filament/filament
+
+```
+
+3. Publish Filament Assets: Publish the Filament assets (config files, views, etc.) to your project by running the following Artisan command:
+
+```bash
+php artisan filament:install
+
+```
+Filament provides a full installation guide in its documentation. You can find it [here](https://filamentphp.com/docs/3.x/panels/installation)
+
+## SCREENSHOT OF MY OUTPUT USING FILAMENT
+![alt text](image-13.png)
+
+![alt text](image-14.png)
+
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)

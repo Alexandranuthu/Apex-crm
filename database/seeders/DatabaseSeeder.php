@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\PostsFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,7 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             OrganisationSeeder::class,
             ContactsSeeder::class,
-            DealsSeeder::class
+            DealsSeeder::class,
+            PostsSeeder::class,
+            TasksSeeder::class,
+            LeadSeeder::class,
+            RolesAndPermissionsSeeder::class
         ]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

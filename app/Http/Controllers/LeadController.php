@@ -2,54 +2,75 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Lead;
+use Illuminate\Http\Request;
 
 class LeadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return Lead::all();
+        $leads = Lead::paginate(10); // Assuming pagination with 10 leads per page
+        return view('lead.index', compact('leads'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function create()
+    {
+        return view('lead.create');
+    }
+
     public function store(Request $request)
     {
-        $lead = Lead::create($request->all());
-        return response()->json($lead, 201);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+        ]);
+
+        Lead::create($request->all());
+        
+        $notification = [
+            'message' => 'Lead created successfully!',
+            'alert-type' => 'success'
+        ];
+        
+        return redirect()->route('lead.index')->with($notification);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Lead $lead)
     {
-        $lead = Lead::findOrFail($id);
-        return response()->json($lead);
+        if (!$lead) {
+            return redirect()->route('lead.index')->with('error', 'Lead not found');
+        }
+
+        return view('lead.show', ['lead' => $lead]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function edit(Lead $lead)
     {
-        $lead = Lead::findOrFail($id);
+        if (!$lead) {
+            return redirect()->route('lead.index')->with('error', 'Lead not found');
+        }
+
+        return view('lead.edit', ['lead' => $lead]);
+    }
+
+    public function update(Request $request, Lead $lead)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+        ]);
+
         $lead->update($request->all());
-        return response()->json($lead, 200);
+
+        return redirect()->route('lead.index')->with('success', 'Lead updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Lead $lead)
     {
-        $lead = Lead::findOrFail($id);
         $lead->delete();
-        return response()->json(null, 204);
+
+        return redirect()->route('lead.index')->with('success', 'Lead deleted successfully');
     }
 }
