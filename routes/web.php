@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\DealsController;
-use App\Http\Controllers\OrganisationController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\OrganisationController;
 
 /*
 |--------------------------------------------------------------------------
